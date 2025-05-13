@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('LiloandStitch.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar a {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+        }
+        .welcome {
+            font-family: 'Pacifico', cursive;
+            font-size: 2em;
+            color: #ff69b4;
+        }
+        .message-box {
+            width: 40%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffffcc;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            position: fixed;
+            top: 20%;
+            right: 5%;
+            color: #333;
+            font-size: 1em;
+            line-height: 1.6em;
+            display: block;
+        }
+        .buttons-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .continue-button, .response-button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .continue-button:hover, .response-button:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+        }
+        .no-button {
+            position: relative;
+            transition: all 0.2s ease;
+            background-color: #FF6347;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1em;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin: 10px;
+        }
+        .yes-button {
+            transition: all 0.2s ease;
+            background-color: #32CD32;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1em;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="buttons">
+            <a href="ourjourney.html" target="_self">Our Journey</a>
+            <a href="index.html" target="_self">Home</a>
+        </div>
+        <div class="welcome">Sthandwa Sami...</div>
+    </div>
+    <div id="message-box" class="message-box">
+        <p id="message">Welcome to the final page of this, I hope you've enjoyed the journey thus far</p>
+        <div class="buttons-container">
+            <button class="continue-button" onclick="nextMessage()">Continue</button>
+        </div>
+    </div>
+    <script>
+        const messages = [
+            "Two and a half years is a long time but I do believe it is about time...", 
+            "We still gonna get you that plate but I would like to be given the formal opportunity to be your boyfriend...", 
+            "Ms. Goosebell, Will you be my girlfriend?"
+        ];
+        let index = 0;
+
+        function nextMessage() {
+            const messageBox = document.getElementById("message-box");
+            const messageParagraph = document.getElementById("message");
+            if (index < messages.length - 1) {
+                messageParagraph.textContent = messages[index];
+                index++;
+            } else {
+                messageParagraph.textContent = messages[index];
+                messageBox.innerHTML += '<button class="yes-button" onclick="showLoveMessage()">Yes</button> <button class="no-button" onclick="shrinkNoButton(this)"><span>No</span></button>';
+            }
+        }
+
+        function showLoveMessage() {
+            alert('I love you. We now have an anniversary date.');
+        }
+
+        function shrinkNoButton(button) {
+            const text = button.querySelector('span');
+            button.style.width = (button.offsetWidth - 10) + "px";
+            button.style.height = (button.offsetHeight - 5) + "px";
+            text.style.fontSize = (parseFloat(window.getComputedStyle(text).fontSize) - 2) + "px";
+        }
+    </script>
+</body>
+</html>

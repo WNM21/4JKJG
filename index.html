@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForJKJG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('Mulan.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar a {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+        }
+        .welcome {
+            font-family: 'Pacifico', cursive;
+            font-size: 2em;
+            color: #ff69b4;
+        }
+        .message-box {
+            width: 30%;
+            padding: 20px;
+            background-color: #ffffffcc;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            position: fixed;
+            top: 25%;
+            left: 5%;
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.6em;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="buttons">
+            <a href="ourjourney.html" target="_self">Our Journey</a>
+            <a href="steptwo.html" target="_self">My Muntu</a>
+        </div>
+        <div class="welcome">Hey Ms. Goosebell</div>
+    </div>
+    <div class="message-box">
+        <p>I hope you're doing well and you have a smile on your face. To get the best experience please view the pages in this order:</p>
+        <ol>
+            <li>Our Journey</li>
+            <li>My Muntu</li>
+        </ol>
+        <p>Enjoy your time here, Love WNM.</p>
+    </div>
+</body>
+</html>
